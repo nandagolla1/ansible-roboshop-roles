@@ -1,12 +1,12 @@
 - name: app setup
   include_role:
-  name: common
-  task_from: app-setup
+    name: common
+    task_from: app-setup
 
 - name: nodejs setup
   include_role:
-  name: common
-  task_from: nodejs
+    name: common
+    task_from: nodejs
 
 - name: copy mongo repo file to /etc/yum.repos.d/mongo.repo
   ansible.builtin.copy:
@@ -32,5 +32,5 @@
 
 - name: systemd setup
   include_role:
-  name: common
-  task_from: systemd
+    name: common
+    task_from: systemd
