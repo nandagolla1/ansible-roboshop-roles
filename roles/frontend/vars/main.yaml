@@ -1,1 +1,3 @@
 CATALOGUE_HOST: catalogue.nanda.cyou
+USER_HOST: user.nanda.cyou
+CART_HOST: cart.nanda.cyou
