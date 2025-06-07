@@ -8,6 +8,9 @@
     daemon_reload: true
     name: "{{ component }}" # --------->
 
+- name: Unmask cart service
+  ansible.builtin.command: systemctl unmask cart
+
 - name: start and enable the {{ component }} service
   ansible.builtin.service:
     name: "{{ component }}"
