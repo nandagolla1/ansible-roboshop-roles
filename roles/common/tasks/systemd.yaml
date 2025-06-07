@@ -8,6 +8,10 @@
     daemon_reload: true
     name: "{{ component }}" # --------->
 
+- name: Unmask {{ component }} service
+  ansible.builtin.command: "systemctl unmask {{ component }}"
+  ignore_errors: true  # optional: avoids failure if it's not masked
+
 - name: start and enable the {{ component }} service
   ansible.builtin.service:
     name: "{{ component }}"
