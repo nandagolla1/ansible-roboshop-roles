@@ -34,7 +34,6 @@
     login_password: "{{ MYSQL_ROOT_PASSWORD }}"
     login_host: "{{ MYSQL_HOST }}"
     login_db: cities
-  when: is_user_present.query_result[0] | length > 0
   register: db_connection
   ignore_errors: yes
 
