@@ -45,9 +45,9 @@
     path: /etc/nginx/nginx.conf
     state: absent
 
-- name: copy roboshop nginx cof file
+- name: copy roboshop nginx conf file
   ansible.builtin.template:
-    src: nginx.service.j2
+    src: nginx.conf.j2
     dest: /etc/nginx/nginx.conf
   notify:
     - Restart nginx
