@@ -1,5 +1,5 @@
 - name: copy {{ component }} service file to /etc/systemd/system/{{ component }}.service
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: "{{ component }}.service"
     dest: /etc/systemd/system/{{ component }}.service
 
@@ -10,6 +10,6 @@
 
 - name: start and enable the {{ component }} service
   ansible.builtin.service:
-    name: {{ component }}
-    state: started
+    name: "{{ component }}"
+    state: restarted
     enabled: yes
